@@ -66,22 +66,19 @@ dir/
 │       └── java/
 │           ├── core/
 │           │   ├── locators/
-│           │   │   └── ExampleLocator.java  # Localizadores de elementos en las páginas
+│           │   │   └── TrianguloLocator.java  # Localizadores de elementos en las páginas
 │           │   ├── pages/
-│           │   │   └── ExamplePage.java     # Representación de una página web
+│           │   │   └── TrianguloPage.java     # Representación de una página web
 │           │   ├── steps/
-│           │   │   └── ExampleStep.java     # Definiciones de pasos para Cucumber
+│           │   │   └── TrianguloStep.java     # Definiciones de pasos para Cucumber
 │           │   └── utils/
 │           │       ├── Action.java          # Métodos comunes para interacciones con Selenium
 │           │       ├── Core.java            # Configuración base del framework
-│           │       ├── Excel.java           # Manejo de datos desde archivos CSV
 │           │       └── Test.java            # Clase principal para ejecutar las pruebas
 │           ├── resources/
-│           │   ├── features/
-│           │       └── Ejemplo.feature      # Archivo de pruebas en formato Gherkin
-│           ├── fixtures/
-│           │   ├── test.data.csv            # Datos de prueba para el entorno de test
-│           │   └── prod.data.csv            # Datos de prueba para el entorno de producción
+│           │   └── features/
+|           |       ├── triangulos-outline.feature  # Archivo de pruebas en formato Gherkin
+│           │       └── triangulos.feature          # Archivo de pruebas en formato Gherkin
 │           └── config.properties            # Archivo de configuración del entorno
 ├── build/
 │   ├── reports/
