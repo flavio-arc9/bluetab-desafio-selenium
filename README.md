@@ -139,3 +139,7 @@ dir/
 ![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_1.png)
 ![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_3.png)
 ![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_2.png)
+
+### Evidencias de Ejecución con Github Actions
+Ejecuciones con [Github Actions](https://github.com/flavio-arc9/bluetab-desafio-selenium/actions)
+![Github Actions #6](src/test/java/resources/evidencia/actions_1.png)
