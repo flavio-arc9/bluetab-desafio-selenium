@@ -131,10 +131,8 @@ public class Core {
         System.out.println("Status: " + scenario.getStatus().toString());
         System.out.println("-------------------------------------------------------");
 
-        if (scenario.isFailed()) {
-            byte[] screenshot = ((TakesScreenshot) Core.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Attach Screenshot");
-        }
+        byte[] screenshot = ((TakesScreenshot) Core.getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "Attach Screenshot");
 
         if (browserDriver != null)
             browserDriver.quit();
