@@ -38,7 +38,7 @@ pipeline {
         stage('Ejecutar Pruebas') {
             steps {
                 script {
-                    def gradleArgs = ['test']
+                    def gradleArgs = ['test', '--info']
 
                     if (params.TAGS?.trim()) {
                         gradleArgs += "-Dcucumber.filter.tags=${params.TAGS.trim()}"
@@ -47,7 +47,7 @@ pipeline {
                     if (params.ENV?.trim()) {
                         gradleArgs += "-Dcucumber.env=${params.ENV.trim()}"
                     }
-                    
+
                     sh "gradle ${gradleArgs.join(' ')}"
                 }
             }
