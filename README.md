@@ -134,3 +134,8 @@ dir/
    ```
    [Reporte de Ejecución](src/test/java/resources/evidencia/cucumber-reports.html)
    ![img](src/test/java/resources/evidencia/reporte.png)
+
+## Evidencias de Ejecución con Jenkins
+![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_1.png)
+![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_3.png)
+![Jenkins Ejecución](src/test/java/resources/evidencia/jenkins_2.png)
