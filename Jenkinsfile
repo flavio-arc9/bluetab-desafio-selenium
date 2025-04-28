@@ -56,8 +56,8 @@ pipeline {
         stage('Generar Informes') {
             steps {
                 script {
-                    def cucumberReportDir = "${WORKSPACE}/build/reports"
-                    archiveArtifacts artifacts: "${cucumberReportDir}/cucumber-reports.html", allowEmptyArchive: true
+                    def cucumberReportDir = "${WORKSPACE}/build/reports/cucumber-reports.html"
+                    archiveArtifacts artifacts: "${cucumberReportDir}", allowEmptyArchive: true
                 }
             }
         }
