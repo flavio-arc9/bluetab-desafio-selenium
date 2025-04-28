@@ -6,11 +6,14 @@ pipeline {
         jdk 'JDK_11'
     }
 
+    parameters {
+        string(name: 'TAGS', defaultValue: '@all', description: 'Cucumber tags to filter tests')
+        string(name: 'ENV', defaultValue: 'test', description: 'Environment for the tests')
+    }
+
     environment {
         GRADLE_HOME = tool 'Gradle_8.14'
         JAVA_HOME = tool 'JDK_11'
-        TAGS = "" 
-        ENV = "test"
     }
 
     stages {
@@ -37,13 +40,14 @@ pipeline {
                 script {
                     def gradleArgs = ['test']
 
-                    if (env.TAGS != "") {
-                        gradleArgs += "-Dcucumber.filter.tags=${env.TAGS}"
+                    if (params.TAGS?.trim()) {
+                        gradleArgs += "-Dcucumber.filter.tags=${params.TAGS.trim()}"
                     }
 
-                    if (env.ENV != "") {
-                        gradleArgs += "-Dcucumber.env=${env.ENV}"
+                    if (params.ENV?.trim()) {
+                        gradleArgs += "-Dcucumber.env=${params.ENV.trim()}"
                     }
+                    
                     sh "gradle ${gradleArgs.join(' ')}"
                 }
             }
