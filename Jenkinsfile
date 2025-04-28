@@ -31,7 +31,7 @@ pipeline {
 
         stage('Compilar') {
             steps {
-                sh 'gradle build'
+                sh "gradle build -Dcucumber.env=${params.ENV.trim()}"
             }
         }
 
