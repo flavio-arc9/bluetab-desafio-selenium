@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Running Tests
 
 on:
   workflow_dispatch:
@@ -6,9 +6,9 @@ on:
       TAGS:
         description: 'Tags to filter tests'
         required: false
-        default: ''
+        default: '@all'
       ENV:
-        description: 'Environment to run tests against'
+        description: 'Environment to run tests'
         required: false
         default: 'test'
 
@@ -53,4 +53,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-reports
-          path: build/reports/cucumber-reports.html
+          path: build/reports/cucumber-reports.html 
+          retention-days: 30
+
