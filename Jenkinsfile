@@ -22,13 +22,13 @@ pipeline {
 
         stage('Configurar Dependencias') {
             steps {
-                sh 'graddle dependencies' 
+                sh 'gradle dependencies' 
             }
         }
 
         stage('Compilar') {
             steps {
-                sh 'graddle build'
+                sh 'gradle build'
             }
         }
 
@@ -44,7 +44,7 @@ pipeline {
                     if (env.ENV != "") {
                         gradleArgs += "-Dcucumber.env=${env.ENV}"
                     }
-                    sh "graddle ${gradleArgs.join(' ')}"
+                    sh "gradle ${gradleArgs.join(' ')}"
                 }
             }
         }
